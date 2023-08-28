@@ -11,11 +11,12 @@ program
   .version("0.1.0");
 
 program
-  .command("shades")
+  .command("tailwind:shades")
   .description("Generate tailwind shades")
   .argument("<color>", "color to generate shades from in hex format")
   .action((str) => {
     if (!isValidHexColor(str)) {
+      console.log(str);
       console.error(
         chalk.red(
           boxen("Invalid hex color", { padding: 1, title: "Tailwind Shades" })
